@@ -318,3 +318,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
   console.log('Gmail contact form ready!');
 });
+const modal = document.getElementById("videoModal");
+const iframe = document.getElementById("youtubeVideo");
+
+document.querySelectorAll(".watch-video-btn").forEach(btn => {
+  btn.addEventListener("click", function () {
+    iframe.src = this.dataset.video + "?autoplay=1";
+    modal.style.display = "block";
+  });
+});
+
+function closeVideo() {
+  modal.style.display = "none";
+  iframe.src = "";
+}
